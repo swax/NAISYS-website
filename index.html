@@ -1,8 +1,64 @@
-<html>
-    <head>
-        <title>NAISYS</title>
-    </head>
-    <body>
-        Hello world
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4LYJCF234"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-B4LYJCF234");
+    </script>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAISYS - Node.js Autonomous Intelligence System</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="tophalf">
+        <section class="hero">
+            <h1>NAISYS</h1>
+            <img src="naisys_logo.png" alt="NAISYS Logo" class="logo" width="150" />
+            <h4>Node.js Autonomous Intelligence System</h4>
+        </section>
+
+        <section class="links">
+            <h4>
+                <a href="https://www.npmjs.com/package/naisys"><i class="bi bi-boxes"></i> NPM</a>
+            </h4>
+            <div class="sep"> | </div>
+            <h4>
+                <a href="https://github.com/swax/NAISYS"><i class="bi bi-github"></i> Github</a>
+            </h4>
+            <div class="sep"> | </div>
+            <h4>
+                <a href="https://discord.gg/JBUPWSbaEt"><i class="bi bi-discord"></i> Discord</a>
+            </h4>
+        </section>
+    </div>
+
+    <section class="bottomhalf max-width-section">
+        This <a href="https://test.naisys.org/archives/24-02-29-gpt4-alice-01/" target="_blank">simple website</a> was built with NAISYS by a developer and manager
+        agent. Here are the <a href="https://test.naisys.org/archives/24-02-29-gpt4-alice-01/logs/john-log.html"
+            target="_blank">logs</a> of the process.<br>
+        <br>
+        NAISYS provided the layer between the LLM and shell as well as commands for inter-agent communication.<br>
+        <br>
+        Use <div class="code">npm install -g naisys</div> to start building your own mutli-agent command line automations. 
+        See <a href="https://www.npmjs.com/package/naisys">NPM</a> for how to configure.<br>
+        <br>
+        NAISYS is an <a href="https://github.com/swax/NAISYS">open source</a> project. We'd love to hear your results and feedback on what models give you good results. 
+        We're also interested in ideas of how to fine tune models for better console interactions. Come say Hi 👋 in the <a href="https://discord.gg/JBUPWSbaEt">Discord</a>!
+    </section>
+</body>
+
 </html>
