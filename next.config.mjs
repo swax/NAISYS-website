@@ -6,11 +6,6 @@ const nextConfig = {
   output: "export",
 
   /**
-   * Because we use a CNAME for naisys.org, the base path is set to `/`.
-   */
-  basePath: "/",
-
-  /**
    * Disable server-based image optimization. Next.js does not support
    * dynamic features with static exports.
    *
