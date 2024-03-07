@@ -7,7 +7,7 @@ export default function Home() {
         <section className="hero">
           <h1>NAISYS</h1>
           <Image
-            src="/NAISYS-website/naisys_logo.png"
+            src="/naisys_logo.png"
             alt="NAISYS Logo"
             width="150"
             height="150"
