@@ -2,19 +2,13 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /**
-   * Enable static exports for the App Router.
-   *
-   * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
-   */
+  /** Configuration for SSG (static site generation) */
   output: "export",
 
   /**
-   * Set base path. This is the slug of your GitHub repository.
-   *
-   * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
+   * Because we use a CNAME for naisys.org, the base path is set to `/`.
    */
-  basePath: "/NAISYS-website",
+  basePath: "/",
 
   /**
    * Disable server-based image optimization. Next.js does not support
