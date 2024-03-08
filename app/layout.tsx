@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NAISYS: Node.js Autonomous Intelligence System",
@@ -46,7 +43,9 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className="m-0 font-sans bg-gray-300 text-black antialiased">
+        {children}
+      </body>
     </html>
   );
 }
