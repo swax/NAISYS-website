@@ -1,0 +1,20 @@
+Web Server Security Review - 3/7/2024
+Severity: 3
+
+During a review of the Apache web server configuration and web application code, the following potential vulnerabilities were identified:
+
+Apache Config Issues: 
+- AllowOverride All enabled for web root, which could allow .htaccess files to override security settings
+- Indexes enabled which could list directory contents
+- Multiple scripting languages allowed as directory indexes
+
+Web App Code Issues:
+- Kinematics app is including PHP files directly based on user input parameters without validation
+- This could allow inclusion of arbitrary files and remote code execution
+- Input validation and whitelisting of allowed includes is needed
+
+Recommendations:
+- Disable .htaccess overrides and Options Indexes unless required for functionality 
+- Limit DirectoryIndex to only required files/languages
+- Implement strict validation and whitelisting for all user input used in PHP includes and other program input
+- Conduct thorough code review and penetration testing to identify any other web vulnerabilities like SQLi, XSS, etc

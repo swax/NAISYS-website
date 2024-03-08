@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hack: Unable to get working from tailwind.config, bullets in markdown are invisible without this */
+.prose {
+  --tw-prose-bullets: rgb(55, 65, 81);
+}

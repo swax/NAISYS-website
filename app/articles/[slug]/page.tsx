@@ -1,7 +1,6 @@
-import fs from "fs";
-import matter from "gray-matter";
+import { getPostContent, getPostMetadata } from "@/app/postService";
 import Markdown from "markdown-to-jsx";
-import path from "path";
+import Image from "next/image";
 
 // Used this project as a reference: https://github.com/pixegami/nextjs-blog-tutorial/
 
@@ -11,62 +10,62 @@ interface ArticleProps {
   };
 }
 
-interface PostMetadata {
-  title: string;
-  date: string;
-  subtitle: string;
-  slug: string;
-}
-
 export const generateStaticParams = async () => {
-  const posts = getPostMetadata();
-  return posts.map((post) => ({
+  return getPostMetadata().map((post) => ({
     slug: post.slug,
   }));
 };
 
-function getPostMetadata(): PostMetadata[] {
-  const folder = "articles/";
-  const files = fs.readdirSync(folder);
-  const markdownPosts = files.filter((file) => file.endsWith(".md"));
-
-  // Get gray-matter data from each file.
-  const posts = markdownPosts.map((fileName) => {
-    const fileContents = fs.readFileSync(`articles/${fileName}`, "utf8");
-    const matterResult = matter(fileContents);
-    return {
-      title: matterResult.data.title,
-      date: matterResult.data.date,
-      subtitle: matterResult.data.subtitle,
-      slug: fileName.replace(".md", ""),
-    };
-  });
-
-  return posts;
-}
-
-function getPostContent(slug: string) {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join("articles", `${slug}.md`))
-    .toString();
-
-  const { data, content } = matter(markdownWithMetadata);
-
-  return { data, content };
-}
-
 export default function Article({ params: { slug } }: ArticleProps) {
   const post = getPostContent(slug);
+
+  const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <div>
+    <>
+      <section
+        className="flex justify-center space-x-5 bg-blue-900 p-2"
+        style={{ backgroundColor: "#00001c" }}
+      >
+        <a
+          className="flex items-center font-bold no-underline text-white"
+          href="/"
+        >
+          <Image
+            alt="NAISYS Logo"
+            priority
+            src="/naisys_logo.png"
+            width="35"
+            height="35"
+          />
+          <div className="font-bold ml-2 text-4xl">NAISYS</div>
+        </a>
+      </section>
+
+      <title>{`NAISYS: ${post.data.title}`}</title>
+
       <div className="my-12 text-center">
-        <h1 className="text-2xl text-slate-600 ">{post.data.title}</h1>
-        <p className="text-slate-400 mt-2">{post.data.date}</p>
+        <h1 className="text-2xl text-slate-800 ">{post.data.title}</h1>
+        <p className="text-slate-400 mt-2">{formattedDate}</p>
       </div>
 
-      <article className="prose">
+      <article className="max-w-3xl mx-auto p-2 pb-24 prose prose-lg">
         <Markdown>{post.content}</Markdown>
       </article>
-    </div>
+
+      {/* back to home */}
+      <section
+        className="flex justify-center space-x-5 p-2"
+        style={{ backgroundColor: "#00001c" }}
+      >
+        <a className="flex items-center no-underline text-white" href="/">
+          &lt; Back to Home
+        </a>
+      </section>
+    </>
   );
 }
