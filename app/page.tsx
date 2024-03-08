@@ -2,6 +2,7 @@ import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
 import path from "path";
+import { getPostMetadata } from "./postService";
 
 const links = [
   {
@@ -28,7 +29,7 @@ const links = [
 
 export default function Home() {
   const mainPageContent = fs
-    .readFileSync(path.join("articles", `homepage.md`))
+    .readFileSync(path.join("markdown", `homepage.md`))
     .toString();
 
   return (
@@ -42,7 +43,7 @@ export default function Home() {
 
         <Image
           alt="NAISYS Logo"
-          className="logo mt-4 mx-auto w-36"
+          className=" mt-4 mx-auto"
           priority
           src="/naisys_logo.png"
           width="150"
@@ -72,7 +73,7 @@ export default function Home() {
         className={[
           "max-w-3xl",
           "mx-auto",
-          "p-5",
+          "p-4",
           "text-black",
           "prose",
           "prose-lg",
@@ -83,8 +84,23 @@ export default function Home() {
           "prose-a:underline",
         ].join(" ")}
       >
-        <div className=""></div>
         <Markdown>{mainPageContent}</Markdown>
+      </section>
+
+      {/* Article links */}
+      <section className="max-w-3xl mx-auto p-2 pb-24 prose text-center">
+        <h3 className="font-normal text-slate-800">Articles</h3>
+
+        {getPostMetadata().map((post) => (
+          <div key={post.slug} className="mb-4">
+            <a
+              className="font-thin text-blue-800 no-underline"
+              href={`/articles/${post.slug}`}
+            >
+              {post.title}
+            </a>
+          </div>
+        ))}
       </section>
     </>
   );
