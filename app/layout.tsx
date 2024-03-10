@@ -12,21 +12,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isDevelopment = process.env.NODE_ENV === "development";
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-B4LYJCF234"
-        />
-        <Script
-          id="gtag"
-          dangerouslySetInnerHTML={{
-            __html: `
+        {!isDevelopment && (
+          <>
+            <Script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-B4LYJCF234"
+            />
+            <Script
+              id="gtag"
+              dangerouslySetInnerHTML={{
+                __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -35,8 +37,10 @@ export default function RootLayout({
 
             gtag("config", "G-B4LYJCF234");
             `,
-          }}
-        />
+              }}
+            />
+          </>
+        )}
 
         <link
           rel="stylesheet"

@@ -45,7 +45,7 @@ export default function Home() {
           alt="NAISYS Logo"
           className=" mt-4 mx-auto"
           priority
-          src="/naisys_logo.png"
+          src="/naisys-logo.webp"
           width="150"
           height="150"
         />
