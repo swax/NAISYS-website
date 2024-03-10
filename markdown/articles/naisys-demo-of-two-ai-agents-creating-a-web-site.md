@@ -1,5 +1,5 @@
 ---
-title: NAISYS Demo of Two AI Agents Creating a Web Site
+title: "Demo of Two AI Agents Creating a Web Site"
 date: "2024-03-06"
 ---
 
