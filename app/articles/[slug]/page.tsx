@@ -38,7 +38,7 @@ export default function Article({ params: { slug } }: ArticleProps) {
           <Image
             alt="NAISYS Logo"
             priority
-            src="/naisys_logo.png"
+            src="/naisys-logo.webp"
             width="35"
             height="35"
           />
