@@ -74,6 +74,6 @@ Many lines of the agent prompt were added through trial and error. Trying to sav
 
 The `initialCommands` are set to print out every file and the entire database schema when the session starts. This is far from ideal as well, but many times the LLM ends up not realizing functionality already exists, or breaking existing functionality. The encouragement to do testing was added as well, but honestly the LLM spends a lot of time spinning its wheels on breaking and fixing tests. Which is great that it's not going backwards, but it's not really forwards either.. just sideways.
 
-It seems like there is a lot of room for model improvement. GPT-3 can't do much in NAISYS as it is, and Claude 3 Opus seems much more competent that GPT-4. With more powerful models on the horizon, there's a good chance these problems will just be solved with plain smarter models. No additional 'coherence layers' needed.
+It seems like there is a lot of room for model improvement. GPT-3 can't do much in NAISYS as it is, and Claude 3 Opus seems much more competent than GPT-4. With more powerful models on the horizon, there's a good chance these problems will just be solved with plain smarter models. No additional 'coherence layers' needed.
 
 Of course would a coherent, potentially super-coherent model be indistinguishable from a person? Would it be AGI, possibly ASI? We don't really know what the secret sauce is to reach 'criticality' (self-improving AI), and we know even less of what would happen next.
