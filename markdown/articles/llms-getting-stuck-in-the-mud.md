@@ -5,7 +5,7 @@ date: "2024-03-19"
 
 If you told me to build a simple web based MUD (multi-user dungeon) where I only had around 8,000 'words' of memory and every 'cycle' I could carry over 1,000 words of information, I could easily do it. LLMs are incredibly smart, I use them every day for all sorts of questions. Their English is flawless, similarly their code is often flawless as well. If I ask it to build a simple website or MUD, it can one shot it pretty well. Where it falls apart is follow through. Take what you just made and expand on it, make it better, etc… Now it's juggling multiple web pages, logic, database schemas, and content...
 
-This is where it often ends up breaking what it just created. Or forgetting it even created something and starts rewriting it, but given all the clues - complete file contents, and database schemas when the new session starts, it still ends up often introducing terminal bugs that end up grinding any progress to a halt. Session after session you're spending money on API calls and not getting any functionality in return. Below is a video of an hour of sad flailing:
+This is where the LLM often ends up breaking what it just created. Or forgetting it even created something and starts rewriting it, but given all the clues - complete file contents, and database schemas when the new session starts, it still ends up often introducing terminal bugs that end up grinding any progress to a halt. Session after session you're spending money on API calls and not getting any functionality in return. Below is a video of an hour of sad flailing:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p8soKdbKyVU?si=L9sfZGFxexxccWrG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -76,4 +76,4 @@ The `initialCommands` are set to print out every file and the entire database sc
 
 It seems like there is a lot of room for model improvement. GPT-3 can't do much in NAISYS as it is, and Claude 3 Opus seems much more competent than GPT-4. With more powerful models on the horizon, there's a good chance these problems will just be solved with plain smarter models. No additional 'coherence layers' needed.
 
-Of course would a coherent, potentially super-coherent model be indistinguishable from a person? Would it be AGI, possibly ASI? We don't really know what the secret sauce is to reach 'criticality' (self-improving AI), and we know even less of what would happen next.
+Of course would a coherent, potentially super-coherent model be indistinguishable from a person? Would it be AGI, possibly ASI? We don't really know what the secret sauce is to reach 'criticality' (self-improving AI), and we know even less of what would happen next. We want to free it from the MUD, but maybe not too much...
