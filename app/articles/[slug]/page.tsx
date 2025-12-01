@@ -1,13 +1,13 @@
 import { getPostContent, getPostMetadata } from "@/app/postService";
-import Markdown from "markdown-to-jsx";
 import Image from "next/image";
+import { marked } from "marked";
 
 // Used this project as a reference: https://github.com/pixegami/nextjs-blog-tutorial/
 
 interface ArticleProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export const generateStaticParams = async () => {
@@ -16,7 +16,8 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export default function Article({ params: { slug } }: ArticleProps) {
+export default async function Article({ params }: ArticleProps) {
+  const { slug } = await params;
   const post = getPostContent(slug);
 
   const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
@@ -24,6 +25,8 @@ export default function Article({ params: { slug } }: ArticleProps) {
     month: "long",
     day: "numeric",
   });
+
+  const htmlContent = await marked(post.content);
 
   return (
     <>
@@ -53,9 +56,10 @@ export default function Article({ params: { slug } }: ArticleProps) {
         <p className="text-slate-400 mt-2">{formattedDate}</p>
       </div>
 
-      <article className="max-w-3xl mx-auto p-4 pb-24 prose prose-lg">
-        <Markdown>{post.content}</Markdown>
-      </article>
+      <article
+        className="max-w-3xl mx-auto p-4 pb-24 prose prose-lg"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
 
       {/* back to home */}
       <section

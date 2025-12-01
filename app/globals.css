@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-prose-bullets: rgb(55, 65, 81);
+}
 
 /* Hack: Unable to get working from tailwind.config, bullets in markdown are invisible without this */
 .prose {
