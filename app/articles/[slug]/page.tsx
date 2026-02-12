@@ -1,5 +1,6 @@
 import { getPostContent, getPostMetadata } from "@/app/postService";
 import Image from "next/image";
+import Link from "next/link";
 import { marked } from "marked";
 
 // Used this project as a reference: https://github.com/pixegami/nextjs-blog-tutorial/
@@ -34,7 +35,7 @@ export default async function Article({ params }: ArticleProps) {
         className="flex justify-center space-x-5 bg-blue-900 p-2"
         style={{ backgroundColor: "#00001c" }}
       >
-        <a
+        <Link
           className="flex items-center font-bold no-underline text-white"
           href="/"
         >
@@ -46,7 +47,7 @@ export default async function Article({ params }: ArticleProps) {
             height="35"
           />
           <div className="font-bold ml-2 text-4xl">NAISYS</div>
-        </a>
+        </Link>
       </section>
 
       <title>{`NAISYS: ${post.data.title}`}</title>
@@ -66,9 +67,9 @@ export default async function Article({ params }: ArticleProps) {
         className="flex justify-center space-x-5 p-2"
         style={{ backgroundColor: "#00001c" }}
       >
-        <a className="flex items-center no-underline text-white" href="/">
+        <Link className="flex items-center no-underline text-white" href="/">
           &lt; Back to Home
-        </a>
+        </Link>
       </section>
     </>
   );

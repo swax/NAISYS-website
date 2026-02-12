@@ -50,7 +50,9 @@ export default function Home() {
           height="150"
         />
 
-        <h2 className="mt-4 text-xl">Node.js Autonomous Intelligence System</h2>
+        <h2 className="mt-4 text-xl">
+          Networked Autonomous Intelligence System
+        </h2>
 
         <div className="flex justify-center mt-4 pb-2 space-x-5">
           {links.map((link, index) => (
