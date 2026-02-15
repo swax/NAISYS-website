@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NAISYS: Networked Autonomous Intelligence System",
+  title: "NAISYS: Networked Agents Interface System",
   description: "A command shell for AI agents",
 };
 

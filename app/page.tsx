@@ -51,7 +51,7 @@ export default function Home() {
         />
 
         <h2 className="mt-4 text-xl">
-          Networked Autonomous Intelligence System
+          Networked Agents Interface System
         </h2>
 
         <div className="flex justify-center mt-4 pb-2 space-x-5">
