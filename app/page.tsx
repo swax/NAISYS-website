@@ -267,8 +267,9 @@ export default function Home() {
             </h2>
             <p className="mt-4 leading-7 text-slate-600">
               The Supervisor and ERP keep capabilities visible: agents, runs,
-              hosts, costs, variables, browser work, desktop control, model
-              choice, and structured operations stay inspectable from the UI.
+              hosts, updates, costs, variables, browser work, desktop control,
+              model choice, and structured operations stay inspectable from the
+              UI.
             </p>
           </div>
 

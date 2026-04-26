@@ -29,6 +29,14 @@ const screenshots = [
     height: 1326,
   },
   {
+    src: "/screenshots/supervisor-update.png",
+    capability: "Update the cluster",
+    title: "Supervisor update",
+    body: "Roll every host to an npm version or fork commit; offline hosts apply the selected version when they reconnect.",
+    width: 2301,
+    height: 1455,
+  },
+  {
     src: "/screenshots/supervisor-cost-tracking.png",
     capability: "Control spend",
     title: "Cost tracking",
