@@ -1,5 +1,10 @@
 // SOURCE: https://github.com/gregrickaby/nextjs-github-pages
 
+import { fileURLToPath } from "node:url";
+import { dirname } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /** Configuration for SSG (static site generation) */
@@ -13,6 +18,11 @@ const nextConfig = {
    */
   images: {
     unoptimized: true,
+  },
+
+  // Pin workspace root so Turbopack doesn't pick up an unrelated lockfile higher in the tree.
+  turbopack: {
+    root: __dirname,
   },
 };
 
