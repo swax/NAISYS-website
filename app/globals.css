@@ -1,11 +1,24 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgb(15, 118, 110);
+  color: rgb(255, 255, 255);
+}
+
 @theme {
-  --color-prose-bullets: rgb(55, 65, 81);
+  --color-prose-bullets: rgb(71, 85, 105);
 }
 
 /* Hack: Unable to get working from tailwind.config, bullets in markdown are invisible without this */
 .prose {
-  --tw-prose-bullets: rgb(55, 65, 81);
+  --tw-prose-bullets: rgb(71, 85, 105);
 }

@@ -1,39 +1,24 @@
-NAISYS gives LLMs real autonomy - they operate actual Linux shells, collaborate with other agents, and work independently on complex projects while you watch it all happen in real-time.
+## System layers
 
-## What Makes NAISYS Different
+- **Runner** - starts agents on a host and exposes local tools such as shell, browser, desktop, image, audio, mail, and agent-facing commands.
+- **Hub** - self-hosted server for mail, logs, cost history, variables, users, permissions, config, and host state.
+- **Supervisor** - browser UI for starting and stopping agents, watching live logs, managing hosts, configuring models, tracking costs, and controlling users.
+- **ERP** - optional order and task system with REST endpoints designed for humans and agents to share structured work.
 
-✨ **Actually work independently** - Give them a goal and watch them execute commands, manage files, and solve problems
+## Operating model
 
-🤝 **Collaborate naturally** - Multiple agents communicate, delegate tasks, and coordinate like a real team
+- Every machine needs Node.js 22 or newer.
+- One machine can run the integrated hub, Supervisor, and ERP.
+- Other machines join as hosts with `npx naisys --hub=https://<server>/hub`.
+- Agents can run anywhere in the cluster or be pinned to hosts with the right operating system, tools, GPU, browser, or desktop.
+- Hosts are replaceable because logs, mail, costs, variables, and agent state live in the hub.
 
-🎯 **Stay focused** - Smart context management keeps agents on track even during long-running tasks
+## Useful links
 
-👁️ **Work transparently** - The Overlord interface shows you everything happening across all your agents in real-time
+- [Full README on GitHub](https://github.com/swax/NAISYS)
+- [NPM package](https://www.npmjs.com/package/naisys)
+- [Discord](https://discord.gg/JBUPWSbaEt)
 
-## What Can You Build?
+## License
 
-**Autonomous dev teams** that research, code, test, and review each other's work
-
-**Self-managing systems** that monitor infrastructure and fix issues before you notice
-
-**Research assistants** that gather data across sources and produce comprehensive reports
-
-**Content pipelines** where agents research, write, edit, and publish collaboratively
-
-**QA teams** that test your code, file detailed issues, and verify fixes
-
-## Get Started in Seconds
-
-```bash
-npm install -g naisys
-```
-
-That's it. One command and you're ready to deploy your first autonomous agent.
-
-[Full docs on GitHub](https://github.com/swax/NAISYS) | [NPM Package](https://www.npmjs.com/package/naisys)
-
-## Open Source
-
-NAISYS is MIT licensed and built in the open. We're exploring the frontier of what's possible when AI agents have real autonomy and can truly collaborate.
-
-Come experiment with us in [Discord](https://discord.gg/JBUPWSbaEt) - we want to hear about your wildest agent experiments and what models work best for your use cases.
+NAISYS is MIT licensed and built in the open.
