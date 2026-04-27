@@ -64,7 +64,7 @@ const screenshots = [
     src: "/screenshots/supervisor-chat-thread.png",
     capability: "Coordinate agents",
     title: "Chat and mail",
-    body: "Coordinate with agents through shorter chat threads and persistent inter-agent messaging.",
+    body: "Agents can talk with you and each other through persistent chat and mail, including delegated work across agent hierarchies.",
     width: 2158,
     height: 1318,
   },
