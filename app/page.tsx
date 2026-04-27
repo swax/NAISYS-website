@@ -203,10 +203,23 @@ export default function Home() {
               The hub keeps state. Supervisor and ERP expose the control
               surface. Hosts contribute execution environments. Agents run
               close to the files, browsers, desktops, and hardware they need,
-              while communication and history stay with the organization on the hub.
+              while communication and history stay with the organization on the
+              hub.
             </p>
           </div>
           <SystemDiagram />
+          <div className="mt-5 rounded-md border border-slate-200 bg-white p-5">
+            <div className="grid gap-3 md:grid-cols-[0.28fr_0.72fr] md:items-start">
+              <h3 className="font-semibold text-slate-950">
+                Passkey-only login
+              </h3>
+              <p className="text-sm leading-6 text-slate-600">
+                NAISYS can operate real shells and desktops, so a compromised
+                account is serious. Supervisor does not use password
+                login; user access requires passkeys.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
