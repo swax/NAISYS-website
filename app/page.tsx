@@ -211,19 +211,79 @@ export default function Home() {
           <div className="mt-5 rounded-md border border-slate-200 bg-white p-5">
             <div className="grid gap-3 md:grid-cols-[0.28fr_0.72fr] md:items-start">
               <h3 className="font-semibold text-slate-950">
-                Passkey-only login
+                Passkey login
               </h3>
               <p className="text-sm leading-6 text-slate-600">
                 NAISYS can operate real shells and desktops, so a compromised
-                account is serious. Supervisor does not use password
-                login; user access requires passkeys.
+                account is serious. Supervisor is restricted to passkey login by default.
+                Password login can be enabled with an environment variable.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white" id="capabilities">
+      <section className="border-b border-slate-200 bg-white" id="works-with">
+        <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 md:py-12">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase text-teal-700">
+              Works with
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold text-slate-950">
+              Bring your own machines and model accounts.
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600">
+              Hosts run on the OS you already have. Agents call the model
+              providers you already pay for, including local models you
+              self-host.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Shells",
+                items: ["PowerShell", "WSL", "Linux", "macOS"],
+              },
+              {
+                title: "Desktops",
+                items: ["Windows", "macOS", "X11", "Wayland"],
+              },
+              {
+                title: "Models",
+                items: [
+                  "Anthropic",
+                  "Google",
+                  "Grok",
+                  "OpenAI (standard API or Codex subscription)",
+                  "OpenRouter",
+                  "Local OpenAI-compatible LLMs",
+                ],
+              },
+            ].map((group) => (
+              <article
+                className="rounded-md border border-slate-200 bg-slate-50 p-5"
+                key={group.title}
+              >
+                <h3 className="font-semibold text-slate-950">{group.title}</h3>
+                <ul className="mt-3 grid gap-2 text-sm text-slate-600">
+                  {group.items.map((item) => (
+                    <li className="flex gap-2" key={item}>
+                      <i
+                        className="bi bi-check2 mt-0.5 text-teal-700"
+                        aria-hidden="true"
+                      ></i>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200" id="capabilities">
         <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 md:py-12">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-teal-700">
@@ -244,7 +304,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200" id="hackable">
+      <section className="border-b border-slate-200 bg-white" id="hackable">
         <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 md:py-12">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-teal-700">
@@ -263,7 +323,7 @@ export default function Home() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {hackableSteps.map((step) => (
               <article
-                className="rounded-md border border-slate-200 bg-white p-5"
+                className="rounded-md border border-slate-200 bg-slate-50 p-5"
                 key={step.title}
               >
                 <h3 className="font-semibold text-slate-950">{step.title}</h3>
